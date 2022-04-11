@@ -1,0 +1,5 @@
+technology,rru_donor_node,plmn,cell_name
+LTE,remote,100,cellnametest1
+LTE,remote,101,cellnametest2
+LTE,remote,102,cellnametest3
+LTE,remote,103,cellnametest4

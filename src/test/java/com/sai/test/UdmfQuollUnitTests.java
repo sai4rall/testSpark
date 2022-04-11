@@ -486,9 +486,68 @@ Dataset q = session.read()
 Dataset op=quollUtils.tranformDesigner(q);
 assertEquals(3,op.count());
 }
-@Test
-public void rncToNodeB(Dataset q,Dataset nodeB) {
+    @Test
+    public void wirelessNetwork(){
+        Dataset q = session.read()
+                .option("header", "true")
+                .csv("src/test/resources/nrcellTowirelessnw.csv");
+        Dataset op=quollUtils.wirelessNetwork(q);
+        assertEquals(4,op.count());
+    }
+    @Test
+    public void nrCells_to_wirelessNetwork(){
+        Dataset q = session.read()
+                .option("header", "true")
+                .csv("src/test/resources/nrcellTowirelessnw.csv");
+        Dataset op=quollUtils.nrCells_to_wirelessNetwork(q);
+        assertEquals(4,op.count());
+    }
 
+    @Test
+    public void nrCellsToWirelessNetworkLookup(){
+        Dataset q = session.read()
+                .option("header", "true")
+                .csv("src/test/resources/nrcellTowirelessnw.csv");
+        Dataset op=quollUtils.nrCellsToWirelessNetworkLookup(q);
+        assertEquals(4,op.count());
+    }
+@Test
+public void lteCellToWirelessNetworkLookup(){
+    Dataset q = session.read()
+            .option("header", "true")
+            .csv("src/test/resources/lteTowirelessnw.csv");
+    Dataset op=quollUtils.lteCellToWirelessNetworkLookup(q);
+    assertEquals(4,op.count());
+}
+@Test
+public void lteCellToWirelessNetwork() {
+    Dataset q = session.read()
+            .option("header", "true")
+            .csv("src/test/resources/lteTowirelessnw.csv");
+    Dataset op=quollUtils.lteCellToWirelessNetwork(q);
+    assertEquals(4,op.count());
+}
+@Test
+    public void rncToNodeBLookup() {
+        Dataset q = session.read()
+                .option("header", "true")
+                .csv("src/test/resources/rncToNodeBLookupq.csv");
+        Dataset nodeB = session.read()
+                .option("header", "true")
+                .csv("src/test/resources/rncToNodeBLookupnodeB.csv");
+        Dataset op=quollUtils.rncToNodeBLookup(q,nodeB);
+        assertEquals(2,op.count());
+    }
+@Test
+public void rncToNodeB( ) {
+    Dataset q = session.read()
+            .option("header", "true")
+            .csv("src/test/resources/rncToNodeBLookupq.csv");
+    Dataset nodeB = session.read()
+            .option("header", "true")
+            .csv("src/test/resources/rncToNodeBLookupnodeB.csv");
+    Dataset op=quollUtils.rncToNodeB(q,nodeB);
+    assertEquals(2,op.count());
 }
 
 @Test

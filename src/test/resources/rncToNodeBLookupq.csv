@@ -1,0 +1,5 @@
+technology,rru_donor_node,iub_rbsid,bsc_rnc_node
+WCDMA,remote,100,bsc_rnc_nodetest1
+WCDMA,remote,101,bsc_rnc_nodetest2
+WCDMA,remote,102,bsc_rnc_nodetest3
+WCDMA,remote,103,bsc_rnc_nodetest4
