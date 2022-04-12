@@ -1,0 +1,7 @@
+id,type,cell_name
+testid100,ocw/gNB-CU-UP,testname0
+testid102,ocw/gNB-CU-UP,testname1
+testid108,ocw/gNB-CU-UP,testname8
+testid109,ocw/gNB-CU-UP-test,testname9
+testid110,ocw/gNB-DU,testname9
+testid111,ocw/gNB-DU,testname9

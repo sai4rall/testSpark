@@ -486,6 +486,54 @@ Dataset q = session.read()
 Dataset op=quollUtils.tranformDesigner(q);
 assertEquals(3,op.count());
 }
+@Test
+public void nrCellsToGnbduLookup() {
+    Dataset c2n = session.read()
+            .option("header", "true")
+            .csv("src/test/resources/c2ntest.csv");
+    Dataset gNBDU = session.read()
+            .option("header", "true")
+            .csv("src/test/resources/gNBDUtest.csv");
+
+    Dataset op=quollUtils. nrCellsToGnbduLookup(c2n, gNBDU);
+    assertEquals(2,op.count());
+}
+@Test
+    public void nrCellsToGnbcuup() {
+    Dataset c2n = session.read()
+            .option("header", "true")
+            .csv("src/test/resources/c2ntest.csv");
+    Dataset mbs = session.read()
+            .option("header", "true")
+            .csv("src/test/resources/mbstest.csv");
+    Dataset op=quollUtils.nrCellsToGnbcuup(c2n, mbs);
+    assertEquals(2,op.count());
+}
+@Test
+public void nrCellsToGnbdu(){
+    Dataset c2n = session.read()
+            .option("header", "true")
+            .csv("src/test/resources/c2ntest2.csv");
+    Dataset mbs = session.read()
+            .option("header", "true")
+            .csv("src/test/resources/mbstest.csv");
+
+    Dataset op=quollUtils. nrCellsToGnbdu(c2n, mbs);
+    assertEquals(2,op.count());
+}
+
+@Test
+public void nrCellsToGnbdu2(){
+    Dataset c2n = session.read()
+            .option("header", "true")
+            .csv("src/test/resources/c2ntest3.csv");
+    Dataset mbs = session.read()
+            .option("header", "true")
+            .csv("src/test/resources/mbstest.csv");
+
+    Dataset op=quollUtils. nrCellsToGnbdu2(c2n, mbs);
+    assertEquals(5,op.count());
+}
     @Test
     public void wirelessNetwork(){
         Dataset q = session.read()
